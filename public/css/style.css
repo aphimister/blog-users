@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+  background-image: linear-gradient(to top, hotpink, linen);
+  min-height: 100vh;
+  color: dimgray;
+  margin: 0;
+  text-align: center;
+}
+.title {
+  margin: 0;
+}
+.caps {
+  text-transform: capitalize;
+}
+.userList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.userItem {
+  justify-content: center;
+  text-align: center;
+  margin: 3%;
+}
+.userItem * {
+  margin: 10px;
+}
+.userName {
+  font-size: 150%;
+}
+.psButton {
+  color: dimgray;
+  background-color: transparent;
+  margin: 20px;
+  margin: 4px;
+  padding: 4px;
+  border: dimgray solid 2px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.profileButton {
+  margin: 0 20%;
+}
+form {
+  margin-top: 30px;
+}
+form * {
+  font-family: "Nunito", sans-serif;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer * {
+  padding: 30px;
+}
+a {
+  text-decoration: none;
+  color: dimgray;
+}
+.search * {
+  margin-left: 20px;
+}
+.postTable {
+  margin: auto;
+}
+th,
+td {
+  padding: 5px 30px;
+}

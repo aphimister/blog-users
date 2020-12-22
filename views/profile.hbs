@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>User : {{name}}</title>
+</head>
+
+<body>
+    <h1 class='title'>User: {{name}}</h1>
+    <div class='userName'>{{name}}</div>
+    <div class='userEmail'>{{email}}</div>
+    <a class='psButton updateButton' href='/update/{{id}}'>Update</a>
+    <a class='psButton deleteButton' href='/delete/{{id}}'>Delete</a>
+    <a class='psButton postButton' href='/newPost/{{id}}'>New Post</a>
+    <table class='postTable'>
+        <tr class='postTableHeaders'>
+            <th>Title</th>
+            <th><a href='/profile/?sort={{sort}}&id={{id}}'>Date created</a></th>
+        </tr>
+        {{#each posts}}
+        <tr class='postTableEntry'>
+            <td class='postTableTitle'><a href='/post/{{this.postId}}'>{{this.title}}<a></td>
+            <td class='postTableDate'>{{this.date}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    {{>Nav}}
+</body>
+
+
+</html>

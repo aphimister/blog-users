@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Update {{user.name}}</title>
+</head>
+
+<body>
+    <h1 class='title'>Update {{user.name}}</h1>
+    <form action='/update/{{user.id}}' method='POST'>
+        <input type='text' name='userName' value={{user.name}} /><br />
+        <input type='email' name='userEmail' value={{user.email}} /><br />
+        <input type='password' name='userPassword' value={{user.password}} /><br />
+        <button type='submit'>Update</button>
+    </form>
+    {{>Nav}}
+</body>
+
+</html>

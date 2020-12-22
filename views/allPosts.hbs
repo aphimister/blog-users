@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>All posts</title>
+</head>
+
+<body>
+    <h1 class='title'>All posts</h1>
+    <form class='search' action="/allPosts" method="POST">
+        <input type="text" name='searchTerm' required />
+        <select name='searchBy'>
+            <option value='users.name'>Name</option>
+            <option value='posts.title'>Title</option>
+            <option value='posts.content'>Content</option>
+        </select><button class='psButton' type="submit">Search</button>
+    </form>
+    <table class='postTable'>
+        <tr class='postTableHeaders'>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date created</th>
+        </tr>
+        {{#each posts}}
+        <tr class='postTableEntry'>
+            <td class='postTableTitle'><a href='/post/{{this.postId}}'>{{this.title}}<a></td>
+            <td class='postTableAuthor'><a href='/profile?sort=asc&id={{this.userId}}'>{{this.author}}</a></td>
+            <td class=' postTableDate'>{{this.date}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    {{>Nav}}
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Users</title>
+</head>
+
+<body>
+    <h1 class='title'>All users</h1>
+    <ul class='userList'>
+        {{#each users}}
+        <li class='userItem'>
+            <div class='userName'>{{this.name}}</div>
+            <div class='userEmail'>{{this.email}}</div>
+            <form action='/profile' method="GET"><input type="hidden" name='sort' value='asc' />
+                <input type='hidden' name='id' value={{this.id}} />
+                <button class='psButton profileButton' type='submit'>Profile</button>
+            </form>
+            <a class='psButton updateButton' href='/update/{{this.id}}'>Update</a>
+            <a class='psButton deleteButton' href='/delete/{{this.id}}'>Delete</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{>Nav}}
+</body>
+
+
+</html>

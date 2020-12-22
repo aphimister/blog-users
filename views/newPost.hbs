@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>New post by {{name}}</title>
+</head>
+
+<body>
+    <h1>New blog post by {{name}}</h1>
+    <form action='/newPost/{{id}}' method="POST">
+        <label for='blogTitle'>Title:</label>
+        <input required type="text" name='blogTitle' /></br>
+        <label for="blogContent">Post:</label></br>
+        <textarea required name='blogContent'></textarea></br>
+        <button class='psButton' type='submit'>Submit post</button>
+    </form>
+    {{>Nav}}
+</body>
+
+</html>
